@@ -22,8 +22,8 @@ def run():
     time_start = time.time()
 
     needDate = time.strftime("%Y%m%d", time.localtime())
-    engine, logger = configuration.sql_tuShare_log('config-local.ini')
-    us_stock_basic_data = americastockdata.AmericaStockBasicData(engine,logger)
+    engine, logger = configuration.sql_tuShare_log('config.ini')
+    us_stock_basic_data = americastockdata.AmericaStockBasicData(engine, logger)
 
     # base_t(engine, pro, logger)
     # market_t(engine, pro, logger, needDate)

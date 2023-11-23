@@ -3,7 +3,6 @@ import configparser
 import inspect
 import os
 import sys
-import tushare as ts
 from util import loggerUtils
 from sqlalchemy import create_engine
 
@@ -19,7 +18,6 @@ print("添加包路径为：" + list_path[0])
 sys.path.append(list_path[0])
 
 
-
 # 获取SQL, ThShare, Log
 def sql_tuShare_log(config_name):
     # 1. 读取配置文件路径
@@ -32,7 +30,6 @@ def sql_tuShare_log(config_name):
     # ts.set_token(tushare_token)
     # pro = ts.pro_api()
 
-
     # 3. 获取日志记录对象
     logger = loggerUtils.TNLog()
 
@@ -41,9 +38,7 @@ def sql_tuShare_log(config_name):
     db_user = cp.get("db", "db_user")
     db_pass = cp.get("db", "db_pass")
     engine = create_engine('mysql+pymysql://' + db_user + ':' + db_pass + '@' + db_host + '/stock_us?charset=UTF8',
-                            pool_size=30, max_overflow=30)
+                           pool_size=30, max_overflow=30)
     # python 2.7用法
     # engine = create_engine('mysql://root:rootroot@localhost:3306/stock?charset=utf8', pool_size=30, max_overflow=30)
-    return engine,  logger
-
-
+    return engine, logger

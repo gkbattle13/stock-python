@@ -2,13 +2,10 @@ import time
 import akshare as ak
 import pandas as pd
 import threadpool as threadpool
-
 from concurrent.futures import ThreadPoolExecutor
-
 from util import strUtils
 
 """ 通过AKShare 接口获取Am数据 https://www.akshare.xyz/data/stock/stock.html#id41 """
-
 
 
 class AmericaStockBasicData:
@@ -508,4 +505,3 @@ class AmericaStockBasicData:
                   str(e))
         finally:
             exit()
-
