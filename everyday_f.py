@@ -18,6 +18,7 @@ sys.path.append(list_path[0])
 
 
 def run():
+    print(sys.path)
     # TODO 处理需要处理的数据
     time_start = time.time()
 
